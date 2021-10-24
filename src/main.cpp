@@ -91,7 +91,7 @@ void display_gui( const std::unique_ptr< vcl::rndr::experimental::renderer >& rn
 			rndr->set_kd( material_id, vcl::col3( color[ 0 ], color[ 1 ], color[ 2 ] ) );
 		}
 
-		ImGui::SliderFloat( "alpha", &alpha, 0.1f, 1.f );
+		ImGui::SliderFloat( "alpha", &alpha, 0.15f, 1.f );
 		{
 			rndr->set_ka( material_id, alpha );
 		}
@@ -246,9 +246,9 @@ int main( int argc, char** argv )
 		if( is_display_light ) display_light();
 
 		shader->unbind();
-		#if defined( USE_ENVMAP )
+		//#if defined( USE_ENVMAP )
 		display_cubemap( mvp );
-		#endif
+		//#endif
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData( ImGui::GetDrawData() );
