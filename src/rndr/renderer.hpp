@@ -1,6 +1,6 @@
-
-#ifndef _SRC_PRT_EDGETREE_RENDERER_HPP_
-#define _SRC_PRT_EDGETREE_RENDERER_HPP_
+#pragma once
+#ifndef _RENDERER_HPP_
+#define _RENDERER_HPP_
 
 #include<iostream>
 #include<string>
@@ -224,4 +224,4 @@ private:
 
 #include"renderer-impl.hpp"
 
-#endif //_SRC_PRT_EDGETREE_RENDERER_HPP_
+#endif //_RENDERER_HPP_

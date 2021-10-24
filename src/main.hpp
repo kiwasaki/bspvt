@@ -13,7 +13,6 @@
 
 #include"math/vec2.hpp"
 #include"math/vec3.hpp"
-//#include"../src/prt/edgetree/renderer.hpp"
 #include"ltc/ltc.hpp"
 #include"ltc/ltc_data.hpp"
 #include"gl/glslprogram.hpp"
@@ -28,8 +27,8 @@ constexpr int window_size_y = 720;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //choose rendering scene
-#define TEAPOT
-//#define DRAGON
+//#define TEAPOT
+#define DRAGON
 //#define LIVING_ROOM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -523,27 +522,7 @@ void keyboard_function( GLFWwindow *window, int key, int scancode, int action, i
 {
 	if( key == GLFW_KEY_Q && action == GLFW_PRESS ) {
 		glfwSetWindowShouldClose( window, GL_TRUE );
-	} else if( key == GLFW_KEY_0 && action == GLFW_PRESS ) {
-		cmode = camera_mode::noop;
-	} else if( key == GLFW_KEY_1 && action == GLFW_PRESS ) {
-		cmode = camera_mode::rotate;
-	} else if( key == GLFW_KEY_2 && action == GLFW_PRESS ) {
-		cmode = camera_mode::walk;
-	} else if( key == GLFW_KEY_3 && action == GLFW_PRESS ) {
-		cmode = camera_mode::light_rotate_x;
-	} else if( key == GLFW_KEY_4 && action == GLFW_PRESS ) {
-		cmode = camera_mode::light_rotate_y;
-	} else if( key == GLFW_KEY_5 && action == GLFW_PRESS ) {
-		cmode = camera_mode::light_rotate_z;
-	} else if( key == GLFW_KEY_6 && action == GLFW_PRESS ) {
-		cmode = camera_mode::light_translate;
-	} else if( key == GLFW_KEY_7 && action == GLFW_PRESS ) {
-		cmode = camera_mode::light_scale;
-	} else if( key == GLFW_KEY_8 && action == GLFW_PRESS ) {
-
-	} else if( key == GLFW_KEY_Z && action == GLFW_PRESS ) {
-
-	} else if( key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS ) {
+	}  else if( key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS ) {
 		std::cout << "camera(" << camera[ 0 ] << ", " << camera[ 1 ] << ", " << camera[ 2 ] << ")" << std::endl;
 		std::cout << "camera_theta   : " << camera_theta << std::endl;
 		std::cout << "camera_phi     : " << camera_phi << std::endl;
@@ -555,24 +534,6 @@ void keyboard_function( GLFWwindow *window, int key, int scancode, int action, i
 		std::cout << std::endl;
 	} else if( key == GLFW_KEY_C && action == GLFW_PRESS ) {
 		capture();
-	} else if( key == GLFW_KEY_RIGHT && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.x += 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].x = light_init_position[ i ].x + light_translate.x; }
-	} else if( key == GLFW_KEY_LEFT && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.x -= 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].x = light_init_position[ i ].x + light_translate.x; }
-	} else if( key == GLFW_KEY_UP && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.z += 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].z = light_init_position[ i ].z + light_translate.z; }
-	} else if( key == GLFW_KEY_DOWN && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.z -= 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].z = light_init_position[ i ].z + light_translate.z; }
-	} else if( key == GLFW_KEY_Y && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.y += 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].y = light_init_position[ i ].y + light_translate.y; }
-	} else if( key == GLFW_KEY_H && (action == GLFW_REPEAT || action == GLFW_PRESS ) ) {
-		//light_translate.y -= 0.1f * light_scale;
-		//for( size_t i = 0; i < light.size(); ++i ) { light[ i ].y = light_init_position[ i ].y + light_translate.y; }
 	}
 }
 
