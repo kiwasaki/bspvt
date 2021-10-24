@@ -1,0 +1,16 @@
+// fragment shader for cubemap
+#version 410
+
+in  vec2 texcoord;
+out vec4 frag_color;
+
+uniform sampler2D tex0;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//
+void main()
+{
+    frag_color = texture( tex0, texcoord );
+}
+

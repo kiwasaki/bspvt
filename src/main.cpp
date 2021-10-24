@@ -44,7 +44,7 @@ using namespace gl;
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
-#include "imgui_app.hpp"
+#include "main.hpp"
 
 //
 void display_gui( const std::unique_ptr< vcl::rndr::experimental::renderer >& rndr )
@@ -123,8 +123,6 @@ void display_gui( const std::unique_ptr< vcl::rndr::experimental::renderer >& rn
 }
 
 
-
-
 int main( int argc, char** argv )
 {
 	init_glfw();
@@ -142,7 +140,7 @@ int main( int argc, char** argv )
 
 	#if defined( TEAPOT )
 		const auto rndr = std::make_unique< vcl::rndr::experimental::renderer >( "../obj/", "teapot.obj", frame_buffer_size_x, frame_buffer_size_y, texture_light_filename, envmap_folder );
-		rndr->load_edge_tree( "../cmake-build-release/teapot_ex_min_hemi.qtr" );
+		rndr->load_edge_tree( "../data/teapot.bspvt" );
 		rndr->calc_visible_domain_for_envmap();
 		rndr->set_tex_light_flag( texture_light_flag );
 		rndr->set_env_light_flag( envmap_light_flag );

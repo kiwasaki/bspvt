@@ -34,12 +34,9 @@ if( APPLE )
     set( GLEW_LIBRARY glew )
 endif( APPLE )
 
-file( GLOB HEADER_FILES src/*.hpp src/*/*.hpp src/*/*/*.hpp src/*/*/*/*.hpp )
-file( GLOB SOURCE_FILES src/main.cpp src/config.cpp src/*/*.cpp src/*/*/*.cpp )
-list( FILTER SOURCE_FILES EXCLUDE REGEX "src/prt/precompute.cpp" )
-list( FILTER SOURCE_FILES EXCLUDE REGEX "src/fit/fit/fitLTC.cpp" )
-list( FILTER SOURCE_FILES EXCLUDE REGEX "src/ltc/ltc.cpp" )
-#list( FILTER SOURCE_FILES EXCLUDE REGEX "src/prt/quadtree/renderer.cpp" )
+file( GLOB HEADER_FILES src/*.hpp src/*/*.hpp src/*/*/*.hpp )
+file( GLOB SOURCE_FILES src/main.cpp src/imgui/*.cpp )
+
 
 if( WIN32 )
     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:AVX2" )
@@ -56,20 +53,6 @@ endif( WIN32 )
 add_executable( ${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} )
 target_link_libraries( ${PROJECT_NAME} ${OPENGL_LIBRARY} ${GLEW_LIBRARY} ${OpenCV_LIBS} ${GLFW_LIBRARY} )
 
-
-########################################################################################################################
-# make_error_image : make error image (visualize difference between reference and rendering result)
-########################################################################################################################
-project( imgui_app )
-include_directories( /usr/local/include/ ${OpenCV_INCLUDE_DIRS} ${EIGEN_INCLUDE_DIR} ${GLUT_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/include/ )
-link_directories( /usr/local/lib/ ${OpenCV_LIB_DIRS} )
-file( GLOB SOURCE_HEADER_FILES app/imgui/${PROJECT_NAME}/*.hpp src/imgui/imgui/*.hpp)
-file( GLOB SOURCE_FILES src/imgui/imgui/*.cpp src/imgui/*.cpp )
-add_executable( ${PROJECT_NAME} ${SOURCE_HEADER_FILES} ${SOURCE_FILES} src/imgui/${PROJECT_NAME}.cpp )
-target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} ${GLFW_LIBRARY} ${GLEW_LIBRARY} ${OPENGL_LIBRARY} )
-
-
-########################################################################################################################
 project( bspvt )
 
 

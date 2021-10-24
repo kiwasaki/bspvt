@@ -11,16 +11,17 @@
 #include<glm/gtx/transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
 
-#include"../math/vec2.hpp"
-#include"../math/vec3.hpp"
+#include"math/vec2.hpp"
+#include"math/vec3.hpp"
 //#include"../src/prt/edgetree/renderer.hpp"
-//#include"../ltc/ltc.hpp"
-#include"../ltc/ltc_data.hpp"
-#include"../gl/glslprogram.hpp"
-#include"../tgaloader/tgaloader.hpp"
+#include"ltc/ltc.hpp"
+#include"ltc/ltc_data.hpp"
+#include"gl/glslprogram.hpp"
+#include"tgaloader/tgaloader.hpp"
+#include"rndr/renderer.hpp"
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include"../image/stb_image_write.h"
+#include"image/stb_image_write.h"
 
 constexpr int window_size_x = 1280;
 constexpr int window_size_y = 720;
