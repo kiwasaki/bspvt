@@ -12,4 +12,15 @@ Please unzip resource.zip and move four folders (data, environment_map, obj, tex
 
 ### Citation
 If you think this helpful, please cite our paper.
+``` bibtex
+@article{Okuno:2021,
+  author = {Hiroki Okuno and Kei Iwasaki}
+  title = {Binary space partitioning visibility tree for polygonal and environment light rendering},
+  journal = {The Visual Computer},
+  volume = {37},
+  number = {9},
+  pages  = {2499--2511},
+  year  = {2021}, 
+}
+```
 
