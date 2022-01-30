@@ -1,6 +1,7 @@
 #ifndef _GLFW_HPP_
 #define _GLFW_HPP_
 
+#include<iostream>
 //#include<OpenGL/glu.h>
 #include<GLFW/glfw3.h>
 
